@@ -2,6 +2,7 @@ export const COUNTPLUS = 'countPlus'
 export const COUNTMINUS = 'countMinus'
 export const ADDTASK = 'addTask'
 export const REMOVETASK = 'removeTask'
+export const CHECKTASK = 'checkTask'
 
 // Actionを記載（オブジェクトです）
 export const countPlus = () => ({
@@ -25,4 +26,10 @@ export const removeTask = index => ({
   remove: {
     index:index
   }
+})
+
+export const checkTask = (flg,index) => ({
+  type: CHECKTASK,
+  flg: !flg,
+  index: index,
 })

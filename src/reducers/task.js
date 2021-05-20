@@ -1,5 +1,6 @@
 import {ADDTASK} from '../actions';
 import {REMOVETASK} from '../actions'
+import {CHECKTASK} from '../actions'
 
 const initialState = {
   todos:[
@@ -22,6 +23,11 @@ export default(state = initialState, action) => {
       let copyTodos = [...state.todos]
       copyTodos.splice(action.remove.index, 1)
       return {todos:copyTodos}
+    case CHECKTASK:
+      console.log(action.flg)
+      let copyTodos2 = [...state.todos]
+      copyTodos2[action.index].flg = action.flg
+      return { todos:copyTodos2}
     default:
       return state
   }
